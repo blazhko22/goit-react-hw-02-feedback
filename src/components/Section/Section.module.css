@@ -1,0 +1,10 @@
+.section {
+  padding: 20px;
+  background-color: aliceblue;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: #919090;
+}
