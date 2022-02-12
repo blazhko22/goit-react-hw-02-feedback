@@ -7,6 +7,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation-name: changeBgColor;
+  animation-duration: 3000ms;
+  
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+@keyframes changeBgColor {
+  0% {
+    background-color: rgb(211, 111, 111);
+  }
+
+  20% {
+    background-color: rgb(184, 85, 159);
+  }
+
+  40% {
+    background-color: rgb(105, 97, 145);
+  }
+
+  60% {
+    background-color: rgb(143, 242, 255);
+  }
+
+  80% {
+    background-color: rgb(126, 192, 117);
+  }
+
+  100% {
+    background-color: rgb(241, 232, 100);
+  }
 }
 
 code {
