@@ -5,36 +5,16 @@ import Statistics from '../Statistics';
 import Notification from '../Notification';
 
 class Render extends Component {
-  static defaultProps = {
+  state = {
     good: 0,
     neutral: 0,
     bad: 0
   };
 
-  state = {
-    good: this.props.good,
-    neutral: this.props.neutral,
-    bad: this.props.bad,
+  handleBtnClick = e => {
+    const { name } = e.target;
+    this.setState(prevState => ({ [name]: prevState[name] + 1 }));
   };
-
-  handleGood = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-
-  handleNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  handleBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
-
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -46,9 +26,8 @@ class Render extends Component {
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onGood={this.handleGood}
-            onNeutral={this.handleNeutral}
-            onBad={this.handleBad}
+            options={this.state}
+            onLeaveFeedback={this.handleBtnClick}
         />
         </Section>
         <Section title="Statistics">
